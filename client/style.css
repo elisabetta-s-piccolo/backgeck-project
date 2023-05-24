@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "aesthetic";
+    src: url(assets/Aesthetic-Regular.ttf);
+}
+
+body{
+    font-family: "aesthetic";
+    font-weight: bold;
+}
+
+nav{
+    display: flex;
+    width: 100vw;
+    height: 80px;
+    background-color: darkcyan;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+}
+
+nav ul li{
+    margin-right: 40px;
+    font-size: 17px;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    background-color: #abff32;
+    border-radius: 25px;
+    padding: 8px 15px;
+
+}
+
+nav img{
+    height: 80px;
+    width: auto;
+    margin-top: 10px;
+    
+}
+
+nav div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    color:white;
+}
