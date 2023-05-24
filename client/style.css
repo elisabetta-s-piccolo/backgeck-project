@@ -9,14 +9,30 @@
     src: url(assets/Aesthetic-Regular.ttf);
 }
 
+
 body{
     font-family: "aesthetic";
     font-weight: bold;
 }
 
+main{
+    width: 100vw;
+    height: 1000px;
+    background-image: url("assets/gecko_main.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #77c1c1;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 18px;
+
+    
+    
+}
+
 nav{
     display: flex;
-    width: 100vw;
+    width: 100vw; 
     height: 80px;
     background-color: darkcyan;
     justify-content: space-between;
@@ -37,7 +53,7 @@ nav ul li{
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
     background-color: #abff32;
     border-radius: 25px;
-    padding: 8px 15px;
+    padding: 5px 15px;
 
 }
 
@@ -54,4 +70,8 @@ nav div{
     align-items: center;
     padding: 4px;
     color:white;
+}
+
+footer{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
