@@ -49,7 +49,7 @@ do {
         */
         connection.connect((error) => {
             if (error) throw error;
-            else console.log("Connessione al database avvenuta con successo!");
+            else console.log("Connessione a mysql avvenuta con successo!");
         });
 
         // CREIAMO IL DATABASE -------------------------------------------------------------------------------------------------
@@ -58,12 +58,18 @@ do {
             con il metodo .query eseguiamo le query nel database.
             le query le passiamo all'interno del metodo come scritto sotto.
         */
-        connection.query("CREATE DATABASE biblioteca", (error) => {
+        connection.query("CREATE DATABASE " + query.databaseName, (error) => {
             if (error) throw error;
             else console.log("[MYSQL]: Creazione del database avvenuta con successo!");
         });
 
         // CREIAMO LE TABELLE DEL DATABASE -----------------------------------------------------------------------------------
+
+        // seleziona il database
+        connection.query("use biblioteca;", (error) => {
+            if(error) throw error;
+            console.log("[MYSQL]: Database biblioteca selezionato con successo!");
+        });
 
         // creazione tabella utenti
         connection.query(query.queryTableUtenti, (error) => {
