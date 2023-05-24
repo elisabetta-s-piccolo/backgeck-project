@@ -29,6 +29,7 @@ do {
     }
 
     if (confirm === 'si') {
+
         checkValues = true;
 
         // CONNESSIONE AL DATABASE -------------------------------------------------------------------------------------------------------
@@ -49,7 +50,7 @@ do {
         */
         connection.connect((error) => {
             if (error) throw error;
-            else console.log("Connessione a mysql avvenuta con successo!");
+            else console.log("[MYSQL]: Connessione a mysql avvenuta con successo!");
         });
 
         // CREIAMO IL DATABASE -------------------------------------------------------------------------------------------------
@@ -66,7 +67,7 @@ do {
         // CREIAMO LE TABELLE DEL DATABASE -----------------------------------------------------------------------------------
 
         // seleziona il database
-        connection.query("use biblioteca;", (error) => {
+        connection.query("use "+ query.databaseName + ";", (error) => {
             if(error) throw error;
             console.log("[MYSQL]: Database biblioteca selezionato con successo!");
         });
@@ -118,7 +119,7 @@ do {
         // con questo metodo chiudiamo la connessione
         connection.end((err) => {
             if (err) throw err;
-            else console.log('Connessione al database chiusa!');
+            else console.log('[MYSQL]: Connessione al database chiusa!');
         });
     }
 
