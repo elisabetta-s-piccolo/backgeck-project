@@ -6,17 +6,21 @@
 
 @font-face {
     font-family: "aesthetic";
-    src: url(assets/Aesthetic-Regular.ttf);
+    src: url(../assets/Aesthetic-Regular.ttf);
 }
 
 body {
-    background-color: #B0433E;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        overflow-x: hidden;
+        background-image: url(../assets/stacked-waves-haikei.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: repeat;
 }
 
 nav {
     display: flex;
     width: 100vw;
-    background-color: rgb(140, 20, 20);
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
@@ -30,19 +34,28 @@ nav ul {
     margin-right:10px;
 }
 
-nav ul li {
+nav ul li a {
     margin: 0px 20px;
     font-size: 17px;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .btn {
-    color: black;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
     background-color: #ffffff;
-    /* border-radius: 25px; */
+    border-radius: 10px;
     padding: 8px 15px;
     margin-right: 20px;
     transition: scale 0.3s;
+}
+
+.btn a {
+    color: black;
+}
+
+.btn a:hover {
+    text-decoration: none;
 }
 
 .btn:hover {
@@ -51,14 +64,14 @@ nav ul li {
     scale: 1.05;
 }
 
-.btn:active {
-    background-color: #e5e5e5;
-}
-
-nav ul li:hover {
+nav ul li a:hover {
     text-decoration: underline;
     animation: focus 1s ease-in-out;
     cursor: pointer;
+}
+
+.btn:active {
+    background-color: #e5e5e5;
 }
 
 nav img {
@@ -75,14 +88,17 @@ nav div {
     color:white;
     font-family: "aesthetic";
     margin-left: 20px;
-    margin-top: 15px;
+    padding: 5px;
 }
 
-nav div h1 {
+nav div h1 a {
     cursor: pointer;
     margin-left: 10px;
     margin-top: 12px;
     font-size: 35px;
+    font-family: "aesthetic";
+    text-decoration: none;
+    color: #ffffff;
 }
 
 /*Accesso*/

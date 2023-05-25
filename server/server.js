@@ -100,9 +100,12 @@ do {
             });
         });
 
-        //LISTA DI UTENTI
+        //LISTA DI LIBRI
         app.get('/bookList', (req, res) => {
-            const query = 'select * from libri';
+            const page = req.query.page || 1;
+            const elements = 5;
+            const offset = (page - 1) * elements;
+            const query = `select * from libri limit ${elements} offset ${offset}`;
             connection.query(query, (error, results) => {
                 if (error) {
                     console.error("[MYSQL]: Errore durante la ricerca dei libri! " + error);
@@ -134,6 +137,33 @@ do {
                     }
                 }
             });
+        });
+
+        //LOGIN UTENTE
+        app.post('/login', (req, res) => {
+            const email = req.body.email;
+            const password = req.body.password;
+            connection.query(`select * from utenti where email=${email}`, (error, result) => {
+                if(error) {
+                    console.error("[MYSQL]: Errore durante la ricerca dell'utente! " + error);
+                    res.status(500).json({ error: 'Errore durante la ricerca dell\'utente!' });
+                } else {
+                    if (result.length > 0) {
+                        const utente = result[0];
+                        if(email === utente.email && password === utente.password) {
+                            console.log("[MYSQL]: Login dell'utente effettuato con successo!");
+                            res.status(200).json({ message:'Login dell\'utente effettuato con successo!' });
+                        } else {
+                            console.log("[MYSQL]: Email o password sbagliati");
+                            res.status(401).json({ message:'Email o password sbagliati' });
+                        }
+
+                    } else {
+                        console.log("[MYSQL]: Utente non trovato.");
+                        res.status(404).json({ error: 'Utente non trovato.' });
+                    }
+                }
+            })
         });
 
         // MODIFICA UTENTE
