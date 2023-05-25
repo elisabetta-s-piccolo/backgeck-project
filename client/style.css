@@ -10,8 +10,9 @@
 }
 
 body {
-    background-color: rgb(255, 255, 255);
+    background-color: #B0433E;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 
 /*NAVBAR*/
@@ -41,7 +42,7 @@ nav ul li {
     color: black;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
     background-color: #ffffff;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     padding: 8px 15px;
     margin-right: 20px;
     transition: scale 0.3s;
@@ -122,6 +123,7 @@ section div {
     align-items: center;
     text-align: center;
     color: white;
+    margin-bottom: 60px;
     
 }
 
@@ -134,3 +136,69 @@ section div span p {
     font-size: 20px;
     margin-top: 8px;
 }
+
+.copertine {
+    margin-top: 10px;
+    justify-content: space-around;
+    display: flex;
+    
+   
+}
+
+main{
+    width: 100%;
+    height: 500px;
+}
+
+main div img{
+    width: 150px;
+    height: 225px;
+    margin-right:8px;
+    margin-left: 8px;
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+footer{
+    background-color: black;
+    color: white;
+    /* margin-top: 20px;
+    margin-bottom: 0px; */
+    height:250px;
+}
+
+footer .row{
+    width: 100%;
+    height: 55%;
+    border: 1px solid white;
+
+}
+
+#footerLogo {
+    height: 30%;
+}
+
+#copyright {
+    height: 15%;
+}
+
+footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+footer div img{
+    height: 50px;
+    width: auto;
+    /* margin-top: 3px; */
+    cursor: pointer;
+    
+}
+
+footer div h1{
+    font-family: "aesthetic";
+    font-size: 20px;
+}
+
