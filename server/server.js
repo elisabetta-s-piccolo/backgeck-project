@@ -2,6 +2,7 @@ const mysql = require('mysql2');
 const express = require('express');
 
 const input = require('readline-sync');
+const cors = require('cors');
 
 const query = require('./query.json');
 const { error } = require('console');
@@ -47,13 +48,17 @@ do {
         })
 
         //mettiamo in ascolto il nostro server sulla porta 3000
-        const port = 3000;
-        app.listen(port, () => {
+        const port = 5500;
+        const ip = 'localhost';
+        app.listen(port, ip, () => {
             console.log(`[EXPRESS]: Il server è in ascolto sulla porta ${port}...`);
         })
 
         //usiamo come content type json
         app.use(express.json());
+
+        //ci permette di aggirare la politica CORS
+        app.use(cors());
 
         // ---------------------------------------------------------------------------------------------------------------------------------
 
@@ -83,15 +88,27 @@ do {
 
         //LISTA DI UTENTI
         app.get('/list', (req, res) => {
-
             const query = 'select * from utenti';
-
             connection.query(query, (error, results) => {
                 if (error) {
                     console.error("[MYSQL]: Errore durante la ricerca degli utenti! " + error);
                     res.status(500).json({ error: 'Errore durante la ricerca degli utenti!' });
                 } else {
                     console.log("[MYSQL]: Ricerca di tutti gli utenti effettuata con successo!");
+                    res.json(results);
+                }
+            });
+        });
+
+        //LISTA DI UTENTI
+        app.get('/bookList', (req, res) => {
+            const query = 'select * from libri';
+            connection.query(query, (error, results) => {
+                if (error) {
+                    console.error("[MYSQL]: Errore durante la ricerca dei libri! " + error);
+                    res.status(500).json({ error: 'Errore durante la ricerca dei libri!' });
+                } else {
+                    console.log("[MYSQL]: Ricerca di tutti i libri effettuata con successo!");
                     res.json(results);
                 }
             });

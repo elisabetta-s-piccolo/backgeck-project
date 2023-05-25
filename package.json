@@ -1,0 +1,14 @@
+{
+  "name": "backgeck-project",
+  "version": "1.0.0",
+  "description": "Progetto finale del corso di web developer - gruppo C (Gabriele, Elisabetta, Christian, Kevin) - traccia back-end.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-handlebars": "^7.0.7"
+  }
+}
