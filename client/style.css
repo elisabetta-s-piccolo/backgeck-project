@@ -202,3 +202,9 @@ footer div h1{
     font-size: 20px;
 }
 
+footer div span a{
+    text-decoration: none;
+    font-family: "aesthetic";
+    font-size: 20px;
+    color: white;
+}
