@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,69 +9,105 @@
     src: url(assets/Aesthetic-Regular.ttf);
 }
 
-
-body{
-    font-family: "aesthetic";
-    font-weight: bold;
-}
-
-main{
-    width: 100vw;
-    height: 1000px;
-    background-image: url("assets/gecko_main.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #77c1c1;
+body {
+    background-color: rgb(150, 229, 229);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
-    font-size: 18px;
-
-    
-    
 }
 
-nav{
+/*NAVBAR*/
+nav {
     display: flex;
-    width: 100vw; 
-    height: 80px;
+    width: 100vw;
     background-color: darkcyan;
     justify-content: space-between;
     align-items: center;
-
+    font-weight: bold;
 }
 
 nav ul {
     display: flex;
+    align-items: center;
     list-style: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: black;
+    color: white;
 }
 
-nav ul li{
-    margin-right: 40px;
+nav ul li {
+    margin: 0px 20px;
     font-size: 17px;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
-    background-color: #abff32;
-    border-radius: 25px;
-    padding: 5px 15px;
-
 }
 
-nav img{
+.btn {
+    color: black;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 8px 15px;
+    margin-right: 20px;
+    transition: scale 0.3s;
+}
+
+.btn:hover {
+    text-decoration: none;
+    cursor: pointer;
+    scale: 1.03;
+}
+
+.btn:active {
+    background-color: #e5e5e5;
+}
+
+nav ul li:hover {
+    text-decoration: underline;
+    animation: focus 1s ease-in-out;
+    cursor: pointer;
+}
+
+nav img {
     height: 80px;
     width: auto;
-    margin-top: 10px;
-    
+    margin-top: 3px;
+    cursor: pointer;
 }
 
-nav div{
+nav div {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4px;
     color:white;
+    font-family: "aesthetic";
 }
 
-footer{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+nav div h1 {
+    cursor: pointer;
+}
+
+/*JUMBOTRON*/
+section {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section div {
+    width: 50%;
+    height: 80%;
+    background-color: darkcyan;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+section div span h1 {
+    margin: 30px 0px;
+    font-size: 45px;
+}
+
+section div span p {
+    font-size: 20px;
 }
