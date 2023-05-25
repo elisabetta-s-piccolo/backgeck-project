@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: rgb(150, 229, 229);
+    background-color: rgb(255, 255, 255);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -18,7 +18,7 @@ body {
 nav {
     display: flex;
     width: 100vw;
-    background-color: darkcyan;
+    background-color: rgb(140, 20, 20);
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
@@ -49,7 +49,7 @@ nav ul li {
 .btn:hover {
     text-decoration: none;
     cursor: pointer;
-    scale: 1.03;
+    scale: 1.05;
 }
 
 .btn:active {
@@ -82,9 +82,22 @@ nav div h1 {
 }
 
 /*JUMBOTRON*/
+.hero-section {
+    background-image: url(assets/stacked-waves-haikei.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 3px solid rgb(140, 20, 20);
+}
+
+.hero {
+    backdrop-filter: blur(15px);
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+}
+
 section {
     width: 100vw;
-    height: 50vh;
+    height: 44vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,7 +106,6 @@ section {
 section div {
     width: 50%;
     height: 80%;
-    background-color: darkcyan;
     border-radius: 25px;
     display: flex;
     justify-content: center;
