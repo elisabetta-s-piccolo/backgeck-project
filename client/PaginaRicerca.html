@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stileRicerca.css">
+    <title>Ricerca</title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div> 
+                <img src ="assets/backgeck_logo.png" alt="logo backgeck">
+                <h1>Backgeck Library</h1>
+            </div>
+           
+            <ul>
+                <li>Lista libri</li>
+                <li class="btn">Accedi</li>
+                <li class="btn">Registrati</li>
+            </ul>        
+        </nav>
+    </header>
+
+    <form method="get" action="#">
+        <div class="supercontainer">
+            <div class="supercontainer2">
+    
+                <div class="titolo-autore">
+                    <div class="container">
+                        <label for="title">Ricerca per titolo</label><br>
+                        <div class="subcontainer">
+                            <input type="text" id="title" name="title" placeholder="Nome"><br>
+                            <div class="bottoneCerca">
+                                <input type="button" value="cerca">
+                            </div>
+                            
+                        </div>  
+                    </div>
+                    
+                    <div class="container">
+                        <label for="author">Ricerca per autore</label><br>
+                        <div class="subcontainer">
+                            <input type="text" id="author" name="author" placeholder="Nome"><br>
+                            <div class="bottoneCerca">
+                                <input type="button" value="cerca">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="genere-editore">
+                    <div class="container">
+                        <label for="genere">Inserisci genere</label><br>
+                        <div class="subcontainer">
+                            <input type="text" id="genere" name="genere" placeholder="Nome"><br>
+                            <div class="bottoneCerca">
+                                <input type="button" value="cerca">
+                            </div>
+                        </div>
+                        
+                    </div>
+                
+                    <div class="container">
+                        <label for="editore">Inserisci editore</label><br>
+                        <div class="subcontainer">
+                            <input type="text" id="editore" name="editore" placeholder="Nome"><br>
+                            <div class="bottoneCerca">
+                                <input type="button" value="cerca">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </form>
+
+    <br>
+
+    <div class="supercontainer">
+        <div class="book-box">
+            <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+        </div>
+    </div>
+    
+</body>
+</html>
