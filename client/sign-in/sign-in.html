@@ -24,22 +24,22 @@
         </nav>
     </header>
 
-    <form method="post" action="" id="loginForm">
+    <form method="post" action="/login" id="loginForm">
         <div class="super">
             <div class="supercontainer">
                 <div class="container"> 
                     <div class="subcontainer">
                         <label for="mail">Email</label>
-                        <input type="text" id="mail" name="mail" placeholder="example@mail.com"><br>
+                        <input type="text" id="email" name="mail" placeholder="example@mail.com"><br>
                     </div>  
                 </div>
             
                 <div class="container">
                     <div class="subcontainer">
                         <label for="pswd">Password</label>
-                        <input type="text" id="pswd" name="pswd" placeholder="Password"><br>
+                        <input type="text" id="password" name="pswd" placeholder="Password"><br>
                         <div class="bottoneCerca">
-                            <input type="button" value="accedi">
+                            <input type="submit" value="accedi">
                         </div>
                     </div>  
                 </div>
@@ -48,6 +48,7 @@
         
     </form>
     
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

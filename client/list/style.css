@@ -247,14 +247,13 @@ footer div{
 footer div img{
     height: 50px;
     width: auto;
-    /* margin-top: 3px; */
     cursor: pointer;
     
 }
 
 footer div h1{
-    font-family: "aesthetic";
     font-size: 20px;
+    font-family: "aesthetic";
 }
 
 footer div span {
@@ -267,9 +266,9 @@ footer div span h2{
 
 footer div span a{
     text-decoration: none;
-    font-family: "aesthetic";
     font-size: 20px;
     color: white;
+    margin: 0px 10px;
 }
 
 footer div span a:hover{
