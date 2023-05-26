@@ -139,6 +139,52 @@ do {
             });
         });
 
+        //RICERCA ISBN
+        app.get('/findIsbn', (req, res) => {
+            const isbn = req.query.isbn;
+            console.log(isbn);
+            const query = 'select titolo, ISBN from libri where ISBN = ?'
+
+            connection.query(query, [isbn], (error, results) => {
+                if (error) {
+                    console.error("[MYSQL]: Errore durante la ricerca dell'isbn! " + error);
+                    res.status(500).json({ error: 'Errore durante la ricerca dell\'isbn!' });
+                } else {
+                    if (results.length > 0) {
+                        const utente = results[0];
+                        console.log("[MYSQL]: Ricerca di isbn e titolo effettuata con successo!");
+                        res.status(200).json({ utente });
+                    } else {
+                        console.log("[MYSQL]: isbn non trovato.");
+                        res.status(404).json({ error: 'isbn non trovato.' });
+                    }
+                }
+            });
+        });
+
+        //CERCA SCADENZA TESSERA
+        app.get('/findExpireDate', (req, res) => {
+            const ExpireDate = req.query.isbn;
+            console.log(ExpireDate);
+            const query = 'select data_scadenza from tessere where email=?';
+
+            connection.query(query, [ExpireDate], (error, results) => {
+                if (error) {
+                    console.error("[MYSQL]: Errore durante la ricerca dalla scadenza tessera! " + error);
+                    res.status(500).json({ error: 'Errore durante la ricerca della scadenza tessera!' });
+                } else {
+                    if (results.length > 0) {
+                        const utente = results[0];
+                        console.log("[MYSQL]: Ricerca data scendenza effettuata con successo!");
+                        res.status(200).json({ utente });
+                    } else {
+                        console.log("[MYSQL]: data scedenza non trovato.");
+                        res.status(404).json({ error: 'data scadenza non trovato.' });
+                    }
+                }
+            });
+        });
+
         //LOGIN UTENTE
         app.post('/login', (req, res) => {
             const email = req.body.email;

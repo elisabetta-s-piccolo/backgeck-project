@@ -1,6 +1,35 @@
 var next = document.getElementById("next").addEventListener("click", nextPage);
 var previous = document.getElementById("previous").addEventListener("click", previousPage);
 var page = 1;
+var cerca = document.getElementById("cerca").addEventListener("click", search);
+
+function search() {
+  const form = document.getElementById("myForm");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var select = document.querySelector('select[name="field"]');
+    var input = document.querySelector('input[name="search"]');
+    const field = select.value;
+    const search = input.value;
+    console.log(field);
+    console.log(search);
+    switch (field) {
+      case 'ISBN':
+        trovaIsbn();
+        break;
+      case 'Titolo':
+        break;
+      case 'Autore':
+        break;
+      case 'Genere':
+        break;
+      default:
+        break;
+    }
+  });
+
+}
+
 
 caricaRecords(page);
 
@@ -37,14 +66,47 @@ function caricaRecords(page) {
     });
 }
 
-  function previousPage() {
-    if(page > 1) {
-      page--;
-      caricaRecords(page);
-    }
-  }
-
-  function nextPage() {
-    page++;
+function previousPage() {
+  if (page > 1) {
+    page--;
     caricaRecords(page);
   }
+}
+
+function nextPage() {
+  page++;
+  caricaRecords(page);
+}
+
+function trovaIsbn() {
+  axios.get(`http://localhost:5500/findIsbn?isbn=${search}`)
+    .then(function (response) {
+      const bookData = response.data; // Dati degli utenti
+
+      // Seleziona l'elemento della tabella
+      const table = document.getElementById('bookTable');
+
+      // Genera il markup della tabella
+      let tableHTML = '';
+
+      // Creazione dell'intestazione della tabella
+      tableHTML += '<thead><tr><th>TITOLO</th><th>ISBN</th></thead>';
+
+      // Creazione del corpo della tabella
+      tableHTML += '<tbody>';
+      bookData.forEach(function (book) {
+        tableHTML += `<tr><td>${book.titolo}</td><td>${book.isbn}</td></tr>`;
+      });
+      tableHTML += '</tbody>';
+
+      // Inserisci il markup della tabella nell'elemento HTML
+      table.innerHTML = tableHTML;
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+    .finally(function () {
+      // always executed
+    });
+}
