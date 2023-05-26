@@ -21,11 +21,16 @@ loginForm.addEventListener('submit', function (event) {
   };
 
   // Invia la richiesta POST al server utilizzando Axios
-  axios.post('/login', loginData)
+  axios.post('http://localhost:5500/login', loginData)
     .then(function (response) {
       // Gestisci la risposta del server
       console.log(response.data);
-      // Effettua altre azioni come reindirizzare l'utente a una pagina successiva
+
+      //creiamo il cookie
+      document.cookie = `email=${encodeURIComponent(email)}; path=/`;
+
+      // Effettua il reindirizzamento a una nuova pagina
+      window.location.href = "../index.html";
     })
     .catch(function (error) {
       // Gestisci gli errori della richiesta

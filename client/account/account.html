@@ -11,21 +11,19 @@
     
     <header>
         <nav>
-            <div href="index.html"> 
+            <div> 
                 <img src ="../assets/backgeck_logo.png" alt="logo backgeck">
-                <h1>Backgeck Library</h1>
-            </div> 
-            
-            <div class="account">
-                <h3>Account</h3>
+                <h1><a href="../index.html">Backgeck Library</a></h1>
             </div>
+           
+            <ul>
+                <li><a href="../list/list.html">Lista libri</a></li>
+                <li class="btn" onclick="logout()"><a>Esci</a></li>
+            </ul>        
         </nav>
     </header>
 
     <main>
-        <div class="primobox">
-            <p>Benvenuto nel tuo account, qui trovi le informazioni riguardo i tuoi libri e la tua tessera</p>
-        </div>
 
         <div class="superbox">
             <div class="box">
@@ -36,12 +34,14 @@
             </div>
             <div class="box">
                 <h3>Tessera valida fino al</h3>
-                <div class="boxinfo">
+                <div class="boxinfo" id="expire-date">
                     
                 </div>
             </div>
         </div>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

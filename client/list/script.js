@@ -1,34 +1,54 @@
+const cookies = document.cookie.split(';');
+let email = '';
+for (let i = 0; i < cookies.length; i++) {
+  const cookie = cookies[i].trim();
+  if (cookie.startsWith('email=')) {
+    email = decodeURIComponent(cookie.substring('email='.length));
+    break;
+  }
+}
+console.log(email); 
+
+if(email) {
+  const btnAccedi = document.getElementById("sign-in");
+  const btnRegistrati = document.getElementById("sign-up");
+  const btnAccount = document.getElementById("account");
+  btnAccedi.classList.add("hide");
+  btnRegistrati.classList.add("hide");
+  btnAccount.classList.remove("hide");
+}
+
 var next = document.getElementById("next").addEventListener("click", nextPage);
 var previous = document.getElementById("previous").addEventListener("click", previousPage);
 var page = 1;
 var cerca = document.getElementById("cerca").addEventListener("click", search);
 
-function search() {
-  const form = document.getElementById("myForm");
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    var select = document.querySelector('select[name="field"]');
-    var input = document.querySelector('input[name="search"]');
-    const field = select.value;
-    const search = input.value;
-    console.log(field);
-    console.log(search);
-    switch (field) {
-      case 'ISBN':
-        trovaIsbn();
-        break;
-      case 'Titolo':
-        break;
-      case 'Autore':
-        break;
-      case 'Genere':
-        break;
-      default:
-        break;
-    }
-  });
+// function search() {
+//   const form = document.getElementById("myForm");
+//   form.addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     var select = document.querySelector('select[name="field"]');
+//     var input = document.querySelector('input[name="search"]');
+//     const field = select.value;
+//     const search = input.value;
+//     console.log(field);
+//     console.log(search);
+//     switch (field) {
+//       case 'ISBN':
+//         trovaIsbn();
+//         break;
+//       case 'Titolo':
+//         break;
+//       case 'Autore':
+//         break;
+//       case 'Genere':
+//         break;
+//       default:
+//         break;
+//     }
+//   });
 
-}
+// }
 
 
 caricaRecords(page);

@@ -164,22 +164,22 @@ do {
 
         //CERCA SCADENZA TESSERA
         app.get('/findExpireDate', (req, res) => {
-            const ExpireDate = req.query.isbn;
-            console.log(ExpireDate);
-            const query = 'select data_scadenza from tessere where email=?';
+            const email = req.query.email;
+            console.log(email);
+            const query = 'select email, data_scadenza from v_utenti_tessere where email=?';
 
-            connection.query(query, [ExpireDate], (error, results) => {
+            connection.query(query, [email], (error, results) => {
                 if (error) {
-                    console.error("[MYSQL]: Errore durante la ricerca dalla scadenza tessera! " + error);
-                    res.status(500).json({ error: 'Errore durante la ricerca della scadenza tessera!' });
+                    console.error("[MYSQL]: Errore durante la ricerca della data scadenza tessera! " + error);
+                    res.status(500).json({ error: 'Errore durante la ricerca della data scadenza tessera!' });
                 } else {
                     if (results.length > 0) {
                         const utente = results[0];
-                        console.log("[MYSQL]: Ricerca data scendenza effettuata con successo!");
+                        console.log("[MYSQL]: Ricerca data scadenza effettuata con successo!");
                         res.status(200).json({ utente });
                     } else {
-                        console.log("[MYSQL]: data scedenza non trovato.");
-                        res.status(404).json({ error: 'data scadenza non trovato.' });
+                        console.log("[MYSQL]: data scadenza non trovata.");
+                        res.status(404).json({ error: 'data scadenza non trovata.' });
                     }
                 }
             });
