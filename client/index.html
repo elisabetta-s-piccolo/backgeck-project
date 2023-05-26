@@ -26,8 +26,6 @@
             <div class="hero">
                 <span>
                     <h1>BACKGECK LIBRERIA ONLINE</h1>
-                </span>
-                <span>
                     <p>Acquista o prenota i tuoi libri preferiti!</p>
                     <p>Scegli dove riceverli gratuitamente in meno di 48h con almeno 2 acquisti!</p>
                 </span>
@@ -37,30 +35,53 @@
 
     <main>
         <h1>Dai un'occhiata alle ultime uscite!</h1>
-        <div class = "copertine">
-          
-            <img src = "assets/cop1.jpeg" alt = "immagine copertina libro">
-            <img src = "assets/cop2.jpeg" alt = "immagine copertina libro">
-            <img src = "assets/cop3.jpeg" alt = "immagine copertina libro">
-            <img src = "assets/cop4.jpeg" alt = "immagine copertina libro">
-            <img src = "assets/cop5.jpg" alt = "immagine copertina libro">
-            <img src = "assets/cop6.jpg" alt = "immagine copertina libro">
-            <img src = "assets/cop7.jpeg" alt = "immagine copertina libro">
-            <img src = "assets/cop8.jpg" alt = "immagine copertina libro">
+        <div class="slideshow-container">
+          <div class="slides">
+            <div class="slide">
+              <img src="assets/cop1.jpeg" alt="immagine copertina libro 1">
+            </div>
+            <div class="slide">
+              <img src="assets/cop2.jpeg" alt="immagine copertina libro 2">
+            </div>
+            <div class="slide">
+              <img src="assets/cop3.jpeg" alt="immagine copertina libro 3">
+            </div>
+            <div class="slide">
+              <img src="assets/cop4.jpeg" alt="immagine copertina libro 4">
+            </div>
+            <div class="slide">
+              <img src="assets/cop5.jpg" alt="immagine copertina libro 5">
+            </div>
+            <div class="slide">
+              <img src="assets/cop6.jpg" alt="immagine copertina libro 6">
+            </div>
+            <div class="slide">
+              <img src="assets/cop7.jpeg" alt="immagine copertina libro 7">
+            </div>
+            <div class="slide">
+              <img src="assets/cop8.jpg" alt="immagine copertina libro 8">
+            </div>
+          </div>
         </div>
-    </main>
-
-    <footer>
-        <div class="row" id = "footerLogo">
-            <img src="assets/backgeck_logo.png" alt="logo backgeck">
+        <div class="button-container">
+            <button class="prev">&#8249;</button>
+            <button class="next">&#8250;</button>
+        </div>
+      </main>
+      <footer>
+        <div class = "row" id = "footerLogo" >
+            <img src ="assets/backgeck_logo.png" alt="logo backgeck">
             <h1>Backgeck Library</h1>
         </div>
-        <div class="row">
+        <div id="hr">
+            <hr></hr>
+        </div>
+        <div class = "row" >
             <span>
-                <h3>Contatta gli sviluppatori su linkedin</h3>
-                <a href="https://www.linkedin.com/in/nunzio-christian-de-falco-aa4b34251/">Christian De Falco -</a>
-                <a href="https://www.linkedin.com/in/shidheart/">Elisabetta Sveva Piccolo -</a>
-                <a href="https://www.linkedin.com/in/gabriele-gadaleta-391603180/">Gabriele Gadaleta -</a>
+                <h2>Linkedin degli sviluppatori:</h2>
+                <a href="https://www.linkedin.com/in/nunzio-christian-de-falco-aa4b34251/">Christian De Falco</a>
+                <a href="https://www.linkedin.com/in/shidheart/">Elisabetta Sveva Piccolo</a>
+                <a href="https://www.linkedin.com/in/gabriele-gadaleta-391603180/">Gabriele Gadaleta</a>
                 <a href="https://www.linkedin.com/in/kevin-george-dalpathadu-37a459b9/">Kevin George Dalpathadu</a>
             </span>
         </div>
@@ -68,6 +89,7 @@
             <p>© 2023 Backgeck | Tutti i diritti riservati.</p>
         </div>
     </footer>
+
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
     <script src="script.js"></script>

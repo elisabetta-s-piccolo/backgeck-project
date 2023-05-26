@@ -141,23 +141,24 @@ do {
 
         //LOGIN UTENTE
         app.post('/login', (req, res) => {
-            const email = req.body.email;
-            const password = req.body.password;
-            connection.query(`select * from utenti where email=${email}`, (error, result) => {
-                if(error) {
+            const email = req.body.mail; // Modifica il nome del campo email da "email" a "mail"
+            const password = req.body.pswd; // Modifica il nome del campo password da "password" a "pswd"
+            connection.query(`SELECT * FROM utenti WHERE email = '${email}'`, (error, result) => {
+                if (error) {
                     console.error("[MYSQL]: Errore durante la ricerca dell'utente! " + error);
                     res.status(500).json({ error: 'Errore durante la ricerca dell\'utente!' });
                 } else {
                     if (result.length > 0) {
                         const utente = result[0];
-                        if(email === utente.email && password === utente.password) {
+                        if (email === utente.email && password === utente.password) {
                             console.log("[MYSQL]: Login dell'utente effettuato con successo!");
-                            res.status(200).json({ message:'Login dell\'utente effettuato con successo!' });
+                            res.status(200).json({ message: 'Login dell\'utente effettuato con successo!' });
+                            res.redirect('/index.html'); // Modifica il reindirizzamento alla pagina successiva
                         } else {
                             console.log("[MYSQL]: Email o password sbagliati");
-                            res.status(401).json({ message:'Email o password sbagliati' });
+                            res.status(401).json({ message: 'Email o password sbagliati' });
+                            res.redirect('/sign-in.html'); // Modifica il reindirizzamento alla pagina di login
                         }
-
                     } else {
                         console.log("[MYSQL]: Utente non trovato.");
                         res.status(404).json({ error: 'Utente non trovato.' });
@@ -165,6 +166,7 @@ do {
                 }
             })
         });
+
 
         // MODIFICA UTENTE
         app.post('/update', (req, res) => {

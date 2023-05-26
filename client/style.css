@@ -10,16 +10,17 @@
 }
 
 body {
-    background-color: #B0433E;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    overflow-x: hidden;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        overflow-x: hidden;
+        background-image: url(assets/stacked-waves-haikei.svg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: repeat;
 }
 
-/*NAVBAR*/
 nav {
     display: flex;
     width: 100vw;
-    background-color: rgb(140, 20, 20);
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
@@ -33,19 +34,28 @@ nav ul {
     margin-right:10px;
 }
 
-nav ul li {
+nav ul li a {
     margin: 0px 20px;
     font-size: 17px;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .btn {
-    color: black;
     box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
     background-color: #ffffff;
-    /* border-radius: 25px; */
+    border-radius: 10px;
     padding: 8px 15px;
     margin-right: 20px;
     transition: scale 0.3s;
+}
+
+.btn a {
+    color: black;
+}
+
+.btn a:hover {
+    text-decoration: none;
 }
 
 .btn:hover {
@@ -54,14 +64,14 @@ nav ul li {
     scale: 1.05;
 }
 
-.btn:active {
-    background-color: #e5e5e5;
-}
-
-nav ul li:hover {
+nav ul li a:hover {
     text-decoration: underline;
     animation: focus 1s ease-in-out;
     cursor: pointer;
+}
+
+.btn:active {
+    background-color: #e5e5e5;
 }
 
 nav img {
@@ -78,31 +88,27 @@ nav div {
     color:white;
     font-family: "aesthetic";
     margin-left: 20px;
-    margin-top: 15px;
+    padding: 5px;
 }
 
-nav div h1 {
+nav div h1 a {
     cursor: pointer;
     margin-left: 10px;
     margin-top: 12px;
     font-size: 35px;
+    font-family: "aesthetic";
+    text-decoration: none;
+    color: #ffffff;
 }
-
-
 
 /*JUMBOTRON*/
 .hero-section {
-    background-image: url(assets/stacked-waves-haikei.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-bottom: 3px solid rgb(140, 20, 20);
+    padding: 200px;
 }
 
 .hero {
     backdrop-filter: blur(15px);
     box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
-    
 }
 
 section {
@@ -114,8 +120,6 @@ section {
 }
 
 section div {
-    width: 50%;
-    height: 65%;
     border-radius: 25px;
     display: flex;
     justify-content: center;
@@ -123,8 +127,10 @@ section div {
     align-items: center;
     text-align: center;
     color: white;
-    margin-bottom: 60px;
-    
+}
+
+section div span {
+    padding: 40px;
 }
 
 section div span h1 {
@@ -137,45 +143,95 @@ section div span p {
     margin-top: 8px;
 }
 
-.copertine {
-    margin-top: 10px;
-    justify-content: space-around;
-    display: flex;
-    
-   
-}
 
-main{
+/*SEZIONE DELLE COPERTINE*/
+main {
     width: 100%;
-    height: 500px;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-main div img{
-    width: 150px;
-    height: 225px;
-    margin-right:8px;
-    margin-left: 8px;
-    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
-}
+  main h1 {
+    color: #ffffff;
+    padding: 20px;
+  }
+  
+  .slideshow-container {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.3s ease;
+
+  }
+  
+  .slide {
+    flex: 0 0 33.33%;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    width: 10px;
+    height: auto;
+  }
+  
+  .slide.hidden {
+    opacity: 0;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    border: 2px solid black;
+  }
+
+  .button-container {
+    margin-bottom: 50px;
+  }
+  
+  button {
+    margin: 10px;
+    width: 40px;
+    height: 20px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+  }
 
 /* Footer */
-footer{
-    background-color: black;
+footer {
+    background-color: rgb(20, 20, 20);
     color: white;
-    /* margin-top: 20px;
-    margin-bottom: 0px; */
-    height:250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 footer .row{
     width: 100%;
     height: 55%;
-    border: 1px solid white;
-
+    padding: 15px 0px;
 }
 
 #footerLogo {
     height: 30%;
+}
+
+#hr {
+    width: 80%;
+}
+
+hr {
+    width: 100%;
 }
 
 #copyright {
@@ -192,19 +248,30 @@ footer div{
 footer div img{
     height: 50px;
     width: auto;
-    /* margin-top: 3px; */
     cursor: pointer;
     
 }
 
 footer div h1{
-    font-family: "aesthetic";
     font-size: 20px;
+    font-family: "aesthetic";
+}
+
+footer div span {
+    text-align: center;
+}
+
+footer div span h2{
+    padding: 10px 0px;
 }
 
 footer div span a{
     text-decoration: none;
-    font-family: "aesthetic";
     font-size: 20px;
     color: white;
+    margin: 0px 10px;
+}
+
+footer div span a:hover{
+    text-decoration: underline;
 }
