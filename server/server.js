@@ -187,9 +187,11 @@ do {
 
         //LOGIN UTENTE
         app.post('/login', (req, res) => {
-            const email = req.body.mail; // Modifica il nome del campo email da "email" a "mail"
-            const password = req.body.pswd; // Modifica il nome del campo password da "password" a "pswd"
-            connection.query(`SELECT * FROM utenti WHERE email = '${email}'`, (error, result) => {
+            const email = req.body.email; // Modifica il nome del campo email da "email" a "mail"
+            console.log(email);
+            const password = req.body.password; // Modifica il nome del campo password da "password" a "pswd"
+            console.log(password);
+            connection.query(`SELECT * FROM utenti WHERE email = '${email}' AND password = ${password}`, (error, result) => {
                 if (error) {
                     console.error("[MYSQL]: Errore durante la ricerca dell'utente! " + error);
                     res.status(500).json({ error: 'Errore durante la ricerca dell\'utente!' });
@@ -198,16 +200,14 @@ do {
                         const utente = result[0];
                         if (email === utente.email && password === utente.password) {
                             console.log("[MYSQL]: Login dell'utente effettuato con successo!");
-                            res.status(200).json({ message: 'Login dell\'utente effettuato con successo!' });
-                            res.redirect('/index.html'); // Modifica il reindirizzamento alla pagina successiva
+                            res.send('Login effettuato con successo.');
                         } else {
                             console.log("[MYSQL]: Email o password sbagliati");
-                            res.status(401).json({ message: 'Email o password sbagliati' });
-                            res.redirect('/sign-in.html'); // Modifica il reindirizzamento alla pagina di login
+                            res.status(401).send('Login fallito.')
                         }
                     } else {
                         console.log("[MYSQL]: Utente non trovato.");
-                        res.status(404).json({ error: 'Utente non trovato.' });
+                        res.status(404).send('Utente non trovato.');
                     }
                 }
             })

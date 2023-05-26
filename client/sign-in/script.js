@@ -1,17 +1,39 @@
-const form = document.getElementById("loginForm");
-form.addEventListener('submit', (e) => {
+// Importa la libreria Axios (assicurati di averla precedentemente installata tramite npm)
+// nel tuo file HTML con <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+// o utilizzando require('axios') se stai lavorando con un bundler come webpack.
+// Seleziona il modulo di login dal DOM
+const loginForm = document.getElementById('loginForm');
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+// Aggiungi un gestore di eventi per l'invio del modulo
+loginForm.addEventListener('submit', function (event) {
+  event.preventDefault(); // Impedisce il comportamento predefinito del browser
 
-    axios.post('/login', { email, password })
-    .then((response) => {
-        console.log("tutto apposto")
+  // Recupera i valori inseriti dall'utente
+  const email = document.getElementById('email').value;
+  console.log(email);
+  const password = document.getElementById('password').value;
+  console.log(password);
+
+  // Crea un oggetto con i dati del login
+  const loginData = {
+    email: email,
+    password: password
+  };
+
+  // Invia la richiesta POST al server utilizzando Axios
+  axios.post('/login', loginData)
+    .then(function (response) {
+      // Gestisci la risposta del server
+      console.log(response.data);
+      // Effettua altre azioni come reindirizzare l'utente a una pagina successiva
     })
-    .catch((error) => {
-        console.log("niente apposto")
-    })
-})
+    .catch(function (error) {
+      // Gestisci gli errori della richiesta
+      console.error(error);
+    });
+});
+
+
 
 
 
