@@ -29,8 +29,8 @@ Abbiamo lavorato assieme per creare le basi e la struttura del progetto e poi ci
 3. Divertiti a navigare nel sito web della libreria!
 
 ## Funzioni della Libreria Backgeck:
-- Visualizzare l'elenco dei libri registrati nel database (completata)
-- Registrazione e accesso utente al sito (in corso)
+- Visualizzare l'elenco dei libri registrati nel database
+- Registrazione e accesso utente al sito
 - Visualizzazione area personale dell'utente con data scadenza tessera (in corso)
 
 ## Roadmap per lo sviluppo futuro del progetto:
@@ -38,5 +38,5 @@ Abbiamo lavorato assieme per creare le basi e la struttura del progetto e poi ci
 
 ## Altre funzioni che vorremmo aggiungere al nostro sito web:
 - Noleggiare libri da parte degli utenti
-- (Ritirare i libri prenotati in un punto di ritiro)
+
 
