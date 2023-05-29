@@ -1,3 +1,23 @@
+const cookies = document.cookie.split(';');
+let email = '';
+for (let i = 0; i < cookies.length; i++) {
+  const cookie = cookies[i].trim();
+  if (cookie.startsWith('email=')) {
+    email = decodeURIComponent(cookie.substring('email='.length));
+    break;
+  }
+}
+console.log(email); 
+
+if(email) {
+  const btnAccedi = document.getElementById("sign-in");
+  const btnRegistrati = document.getElementById("sign-up");
+  const btnAccount = document.getElementById("account");
+  btnAccedi.classList.add("hide");
+  btnRegistrati.classList.add("hide");
+  btnAccount.classList.remove("hide");
+}
+
 // Importa la libreria Axios (assicurati di averla precedentemente installata tramite npm)
 // nel tuo file HTML con <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 // o utilizzando require('axios') se stai lavorando con un bundler come webpack.
@@ -6,7 +26,7 @@ const loginForm = document.getElementById('loginForm');
 
 // Aggiungi un gestore di eventi per l'invio del modulo
 loginForm.addEventListener('submit', function (event) {
-  event.preventDefault(); // Impedisce il comportamento predefinito del browser
+event.preventDefault(); // Impedisce il comportamento predefinito del browser
 
   // Recupera i valori inseriti dall'utente
   const email = document.getElementById('email').value;

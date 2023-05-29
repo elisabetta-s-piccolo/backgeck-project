@@ -5,47 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Accedi</title>
 </head>
 <body>
 
     <header>
         <nav>
-            <div> 
+            <div>
                 <img src ="../assets/backgeck_logo.png" alt="logo backgeck">
                 <h1><a href="../index.html">Backgeck Library</a></h1>
             </div>
            
             <ul>
-                <li><a href="../list/list.html">Lista libri</a></li>
-                <li class="btn"><a href="sign-in.html">Accedi</a></li>
-                <li class="btn"><a href="../sign-up/sign-up.html">Registrati</a></li>
+                <li><a href="#">Lista libri</a></li>
+                <li class="btn" id="sign-in"><a href="../sign-in/sign-in.html">Accedi</a></li>
+                <li class="btn" id="sign-up"><a href="../sign-up/sign-up.html">Registrati</a></li>
+                <li class="btn hide" id="account"><a href="../account/account.html">Area Personale</a></li>
             </ul>        
         </nav>
     </header>
+    <section>
+        <form id="loginForm">
+            <div class="login-container">
+                <div class="login">
+                    <h1>LOGIN</h1>
+                    <div class="login-row"> 
+                            <input type="text" id="email" name="email" placeholder="example@mail.com"><br>
+                            <input type="text" id="password" name="password" placeholder="Password"><br>   
+                    </div>
+                    <button type="submit">Accedi</button>   
+                </div>
+            </div>
+        </form>
+    </section>
 
-    <form id="loginForm">
-        <div class="super">
-            <div class="supercontainer">
-                <div class="container"> 
-                    <div class="subcontainer">
-                        <label>Email</label>
-                        <input type="text" id="email" name="email" placeholder="example@mail.com"><br>
-                    </div>  
-                </div>
-            
-                <div class="container">
-                    <div class="subcontainer">
-                        <label>Password</label>
-                        <input type="text" id="password" name="password" placeholder="Password"><br>
-                        <button type="submit">Login</button>     
-                    </div>  
-                </div>
+    <footer>
+        <div class = "row" id = "footerLogo" >
+            <img src ="../assets/backgeck_logo.png" alt="logo backgeck">
+            <h1>Backgeck Library</h1>
         </div>
+        <div id="hr">
+            <hr></hr>
         </div>
-        
-    </form>
-    
+        <div class = "row" >
+            <span>
+                <h2>Linkedin degli sviluppatori:</h2>
+                <a href="https://www.linkedin.com/in/nunzio-christian-de-falco-aa4b34251/">Christian De Falco</a>
+                <a href="https://www.linkedin.com/in/shidheart/">Elisabetta Sveva Piccolo</a>
+                <a href="https://www.linkedin.com/in/gabriele-gadaleta-391603180/">Gabriele Gadaleta</a>
+                <a href="https://www.linkedin.com/in/kevin-george-dalpathadu-37a459b9/">Kevin George Dalpathadu</a>
+            </span>
+        </div>
+        <div class = "row" id = "copyright">
+            <p>© 2023 Backgeck | Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
     <script src="script.js"></script>
 </body>

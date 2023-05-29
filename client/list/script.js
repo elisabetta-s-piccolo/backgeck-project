@@ -23,33 +23,9 @@ var previous = document.getElementById("previous").addEventListener("click", pre
 var page = 1;
 var cerca = document.getElementById("cerca").addEventListener("click", search);
 
-// function search() {
-//   const form = document.getElementById("myForm");
-//   form.addEventListener("submit", function (event) {
-//     event.preventDefault();
-//     var select = document.querySelector('select[name="field"]');
-//     var input = document.querySelector('input[name="search"]');
-//     const field = select.value;
-//     const search = input.value;
-//     console.log(field);
-//     console.log(search);
-//     switch (field) {
-//       case 'ISBN':
-//         trovaIsbn();
-//         break;
-//       case 'Titolo':
-//         break;
-//       case 'Autore':
-//         break;
-//       case 'Genere':
-//         break;
-//       default:
-//         break;
-//     }
-//   });
-
-// }
-
+function ricercaPerFiltri() {
+  //TODO
+} 
 
 caricaRecords(page);
 
