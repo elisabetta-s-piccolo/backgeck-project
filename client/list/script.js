@@ -21,13 +21,13 @@ if(email) {
 var next = document.getElementById("next").addEventListener("click", nextPage);
 var previous = document.getElementById("previous").addEventListener("click", previousPage);
 var page = 1;
-var cerca = document.getElementById("cerca").addEventListener("click", search);
+
+caricaRecords(page);
 
 function ricercaPerFiltri() {
   //TODO
 } 
 
-caricaRecords(page);
 
 function caricaRecords(page) {
   axios.get(`http://localhost:5500/bookList?page=${page}`)
@@ -56,9 +56,6 @@ function caricaRecords(page) {
     })
     .catch(function (error) {
       console.log(error);
-    })
-    .finally(function () {
-      // always executed
     });
 }
 

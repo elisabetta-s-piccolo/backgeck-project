@@ -1,3 +1,4 @@
+// VERIFICA SE IL COOKIE DI SESSIONE HA LA EMAIL DELL'UTENTE LOGGATO.
 const cookies = document.cookie.split(';');
 let email = '';
 for (let i = 0; i < cookies.length; i++) {
@@ -9,6 +10,7 @@ for (let i = 0; i < cookies.length; i++) {
 }
 console.log(email); 
 
+//Funzione di logout, cancelliamo il cookie e ci rimanda alla pagina di login.
 function logout() {
   // Rimuovi il cookie
   document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -28,9 +30,8 @@ function caricaRecords() {
       const divDate = document.getElementById('expire-date');
 
       // Genera il markup della tabella
-      let date = `<h2>${result.email}</h2>`;
-
-      // Creazione del corpo della tabella
+      date = `<h3>${result.utente.data_scadenza}</h3>`;
+      console.log(date)
 
       // Inserisci il markup della tabella nell'elemento HTML
       divDate.innerHTML = date;
@@ -38,8 +39,13 @@ function caricaRecords() {
     })
     .catch(function (error) {
       console.log(error);
+      const divDate = document.getElementById('expire-date');
+      const cardMessage = document.getElementById('card-message');
+
+      let date = `<h3>Nessuna tessera associata.</h3>`; // di default
+      divDate.innerHTML = date;
+
+      let message = 'Clicca qui per creare una tessera!';
+      cardMessage.innerHTML = message;
     })
-    .finally(function () {
-      // always executed
-    });
 }

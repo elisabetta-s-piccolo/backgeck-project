@@ -103,8 +103,7 @@ nav div h1 a {
 
 /*Accesso*/
 
-.super {
-    border: 2px solid white;
+section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,76 +112,114 @@ nav div h1 a {
     height: 550px;
 }
 
-.supercontainer {
-    border: 2px solid white;
-    justify-content: center;
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    text-align: left;
-    /* margin-top: 50px; */
-    /* border: 2px solid rgb(140, 20, 20); */
-
-    background-color: rgb(140, 20, 20);
+    backdrop-filter: blur(20px);
     box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
     border-radius: 25px;
 }
 
-.container {
-    border: 2px solid white;
-    margin-top: 15px;
-    margin-left: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.bottoneCerca {
-    margin-top: 10px;
-}
-
-.btn {
-    color: black;
-    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
-    background-color: #ffffff;
-    /* border-radius: 25px; */
-    padding: 5px 10px;
-    margin-right: 20px;
-    transition: scale 0.3s;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-input[type="text"] {
-    height: 25px;
-    width: 200px;
-}
-
-#mail {
-    margin-left: 34px;
-}
-
-.bottoneCerca {
+.form-row {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    color: #ffffff;
+    font-weight: bolder;
 }
 
-input[type="button"] {
-    margin-top: 10px;
+.form-row span {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+hr {
+    border-color: rgb(140, 20, 20);
+    width: 50%;
+}
+
+button {
+    margin: 20px 0px;
+    padding: 4px 7px;
+    border-radius: 6px;
     border: none;
-    padding: 8px;
-    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
+    font-weight: bold;
     cursor: pointer;
 }
 
-input[type="button"]:active {
-    background-color: rgb(197, 197, 197);
+button:active {
+    background-color: #ececec;
 }
 
-label {
+/*FOOTER*/
+footer {
+    background-color: rgb(20, 20, 20);
     color: white;
-    font-weight: bold;
-    margin-right: 20px;
+    height:250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-a {
-    color: black;
+footer .row{
+    width: 100%;
+    height: 55%;
+    padding: 15px 0px;
+}
+
+#footerLogo {
+    height: 30%;
+}
+
+#hr {
+    width: 80%;
+}
+
+hr {
+    width: 100%;
+}
+
+#copyright {
+    height: 15%;
+}
+
+footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+footer div img{
+    height: 50px;
+    width: auto;
+    cursor: pointer;
+    
+}
+
+footer div h1{
+    font-size: 20px;
+    font-family: "aesthetic";
+}
+
+footer div span {
+    text-align: center;
+}
+
+footer div span h2{
+    padding: 10px 0px;
+}
+
+footer div span a{
     text-decoration: none;
+    font-size: 20px;
+    color: white;
+    margin: 0px 10px;
+}
+
+footer div span a:hover{
+    text-decoration: underline;
 }

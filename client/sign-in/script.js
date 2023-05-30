@@ -42,7 +42,7 @@ event.preventDefault(); // Impedisce il comportamento predefinito del browser
 
   // Invia la richiesta POST al server utilizzando Axios
   axios.post('http://localhost:5500/login', loginData)
-    .then(function (response) {
+    .then(function(response) {
       // Gestisci la risposta del server
       console.log(response.data);
 

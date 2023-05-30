@@ -1,122 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Registrazione</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-          <div> 
-              <img src ="../assets/backgeck_logo.png" alt="logo backgeck">
-              <h1><a href="../index.html">Backgeck Library</a></h1>
-          </div>
-         
-          <ul>
-              <li><a href="list.html">Lista libri</a></li>
-              <li class="btn"><a href="../sign-in/sign-in.html">Accedi</a></li>
-              <li class="btn"><a href="../sign-up/sign-up.html">Registrati</a></li>
-          </ul>        
-      </nav>
 
-    <!--  ------------------------------------  -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Registrazione</title>
+</head>
 
-    <form method="get" action="#">
-      <div class="super">
-        <div class="supercontainer">
-          <div class="container">
-            <div class="subcontainer">
-              <label for="mail">Email</label>
-              <input
-                type="text"
-                id="mail"
-                name="mail"
-                placeholder="esempio@mail.com"
-              /><br />
-            </div>
-
-          </div>
-
-          <div class="container">
-            <div class="subcontainer">
-              <label for="pswd">Password</label>
-              <input
-                type="text"
-                id="pswd"
-                name="pswd"
-                placeholder="Password"
-              /><br />
-            </div>
-          </div>
-
-          <div class="container">
-            <div class="subcontainer">
-              <label for="nome">Nome</label>
-              <input
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Inserisci il tuo nome"
-              /><br />
-            </div>
-          </div>
-
-          <div class="container">
-            <div class="subcontainer">
-              <label for="cognome">Cognome</label>
-              <input
-                type="text"
-                id="cognome"
-                name="cognome"
-                placeholder="Inserisci il tuo cognome"
-              /><br />
-            </div>
-          </div>
-
-          <div class="container">
-            <div class="subcontainer">
-              <label for="data">Data di nascita</label>
-              <input
-                type="text"
-                id="data"
-                name="data"
-                placeholder="gg/mm/aaaa"
-              /><br />
-            </div>
-          </div>
-
-          <div class="container">
-            <div class="subcontainer">
-              <label for="num">Numero di telefono</label>
-              <input
-                type="text"
-                id="num"
-                name="num"
-                placeholder="Inserisci il tuo numero di telefono"
-              /><br />
-            </div>
-          </div>
-
-          <div class="container">
-            <div class="subcontainer">
-              <label for="residenza">Residenza</label>
-              <input
-                type="text"
-                id="residenza"
-                name="residenza"
-                placeholder="Inserisci la tua residenza"
-              /><br />
-            </div>
-          </div>
-
-          <div class="bottoneCerca">
-            <input type="button" value="Registrati" />
-          </div>
-        </div>
+<body>
+  <header>
+    <nav>
+      <div>
+        <img src="../assets/backgeck_logo.png" alt="logo backgeck">
+        <h1><a href="../index.html">Backgeck Library</a></h1>
       </div>
-    </form>
-  </body>
+
+      <ul>
+        <li><a href="list.html">Lista libri</a></li>
+        <li class="btn"><a href="../sign-in/sign-in.html">Accedi</a></li>
+        <li class="btn"><a href="../sign-up/sign-up.html">Registrati</a></li>
+      </ul>
+    </nav>
+
+      <section>
+
+        <div class="signup-form">
+          <form id="loginForm">
+
+          <div class="form-row">
+            <span>
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome" required/>
+            </span>
+            <span>
+              <label for="cognome">Cognome</label>
+              <input type="text" id="cognome" name="cognome" placeholder="Inserisci il tuo cognome" required/>
+            </span>
+          </div>
+
+          <div class="form-row">
+            <span>
+              <label for="data">Data di nascita</label>
+              <input type="text" id="data" name="data" placeholder="gg/mm/aaaa" required/>
+            </span>
+            <span>
+              <label for="residenza">Residenza</label>
+              <input type="text" id="residenza" name="residenza" placeholder="Inserisci la tua residenza" required/>
+            </span>
+          </div>
+
+          <div class="form-row">
+            <span>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="esempio@mail.com" required/>
+            </span>
+            <span>
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Password" required/>
+            </span>
+          </div>
+
+            <button type="submit">Registrati</button>
+
+          </form>
+        </div>
+      </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="row" id="footerLogo">
+        <img src="../assets/backgeck_logo.png" alt="logo backgeck">
+        <h1>Backgeck Library</h1>
+      </div>
+      <div id="hr">
+        <hr>
+        </hr>
+      </div>
+      <div class="row">
+        <span>
+          <h2>Linkedin degli sviluppatori:</h2>
+          <a href="https://www.linkedin.com/in/nunzio-christian-de-falco-aa4b34251/">Christian De Falco</a>
+          <a href="https://www.linkedin.com/in/shidheart/">Elisabetta Sveva Piccolo</a>
+          <a href="https://www.linkedin.com/in/gabriele-gadaleta-391603180/">Gabriele Gadaleta</a>
+          <a href="https://www.linkedin.com/in/kevin-george-dalpathadu-37a459b9/">Kevin George Dalpathadu</a>
+        </span>
+      </div>
+      <div class="row" id="copyright">
+        <p>© 2023 Backgeck | Tutti i diritti riservati.</p>
+      </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="script.js"></script>
+</body>
+
 </html>

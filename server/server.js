@@ -68,20 +68,18 @@ do {
             const password = req.body.password;
             const nome = req.body.nome;
             const cognome = req.body.cognome;
-            const data_nascita = req.body.data_nascita;
-            const num_telefono = req.body.num_telefono;
+            const data_nascita = req.body.dataDiNascita;
             const residenza = req.body.residenza;
-            const ruolo = req.body.ruolo;
 
-            const query = 'insert into utenti (email, password, nome, cognome, data_nascita, num_telefono, residenza, ruolo) values (?,?,?,?,?,?,?,?)';
+            const query = 'insert into utenti (email, password, nome, cognome, data_nascita, residenza) values (?,?,?,?,?,?)';
 
-            connection.query(query, [email, password, nome, cognome, data_nascita, num_telefono, residenza, ruolo], (error) => {
+            connection.query(query, [email, password, nome, cognome, data_nascita, residenza], (error) => {
                 if (error) {
-                    console.err("[MYSQL]: Errore durante l'inserimento dell'utente! " + error);
+                    console.error("[MYSQL]: Errore durante l'inserimento dell'utente! " + error);
                     res.status(500).json({ error: 'Errore durante l\'inserimento dell\'utente!' });
                 } else {
-                    console.log("[MYSQL]: Inserimento utente avvenuto con successo!");
-                    res.status(200).json({ message: 'Inserimento utente avvenuto con successo!' });
+                    console.log("[MYSQL]: Registrazione utente avvenuto con successo!");
+                    res.status(200).json({ message: 'Registrazione utente avvenuto con successo!' });
                 }
             });
         });
@@ -166,7 +164,7 @@ do {
         app.get('/findExpireDate', (req, res) => {
             const email = req.query.email;
             console.log(email);
-            const query = 'select email, data_scadenza from v_utenti_tessere where email=?';
+            const query = 'select data_scadenza from v_utenti_tessere where email=?';
 
             connection.query(query, [email], (error, results) => {
                 if (error) {
@@ -180,6 +178,7 @@ do {
                     } else {
                         console.log("[MYSQL]: data scadenza non trovata.");
                         res.status(404).json({ error: 'data scadenza non trovata.' });
+
                     }
                 }
             });

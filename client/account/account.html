@@ -8,38 +8,57 @@
     <title>Area Personale</title>
 </head>
 <body>
-    
-    <header>
-        <nav>
-            <div> 
+        <!-- HEADER -->
+        <header>
+            <nav>
+                <div>
+                    <img src ="../assets/backgeck_logo.png" alt="logo backgeck">
+                    <h1><a href="../index.html">Backgeck Library</a></h1>
+                </div>
+            
+                <ul>
+                    <li><a href="#">Lista libri</a></li>
+                    <li class="btn" onclick="logout()"><a>Esci</a></li>
+                </ul>        
+            </nav>
+        </header>
+
+        <!-- MAIN -->
+        <main>
+            <section>
+                <div class="box">
+                    <h2>SCADENZA TESSERA</h2>
+                    <div id="expire-date" class="dati-utente"></div>
+                    <h4 id="card-message"></h4>
+                </div>
+                <div class="box">
+                    <h2>LIBRI PRENOTATI</h2>
+                    <div class="dati-utente"></div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class = "row" id = "footerLogo" >
                 <img src ="../assets/backgeck_logo.png" alt="logo backgeck">
-                <h1><a href="../index.html">Backgeck Library</a></h1>
+                <h1>Backgeck Library</h1>
             </div>
-           
-            <ul>
-                <li><a href="../list/list.html">Lista libri</a></li>
-                <li class="btn" onclick="logout()"><a>Esci</a></li>
-            </ul>        
-        </nav>
-    </header>
-
-    <main>
-
-        <div class="superbox">
-            <div class="box">
-                <h3>Lista libri prenotati</h3>
-                <div class="boxinfo">
-                    <div id="datediv"></div>
-                </div>
+            <div id="hr">
+                <hr></hr>
             </div>
-            <div class="box">
-                <h3>Tessera valida fino al</h3>
-                <div class="boxinfo" id="expire-date">
-                    
-                </div>
+            <div class = "row" >
+                <span>
+                    <h2>Linkedin degli sviluppatori:</h2>
+                    <a href="https://www.linkedin.com/in/nunzio-christian-de-falco-aa4b34251/">Christian De Falco</a>
+                    <a href="https://www.linkedin.com/in/shidheart/">Elisabetta Sveva Piccolo</a>
+                    <a href="https://www.linkedin.com/in/gabriele-gadaleta-391603180/">Gabriele Gadaleta</a>
+                    <a href="https://www.linkedin.com/in/kevin-george-dalpathadu-37a459b9/">Kevin George Dalpathadu</a>
+                </span>
             </div>
-        </div>
-    </main>
+            <div class = "row" id = "copyright">
+                <p>© 2023 Backgeck | Tutti i diritti riservati.</p>
+            </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
     <script src="script.js"></script>
